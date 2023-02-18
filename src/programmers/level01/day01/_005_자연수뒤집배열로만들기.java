@@ -1,4 +1,4 @@
-package programmers.level01.day02;
+package programmers.level01.day01;
 
 public class _005_자연수뒤집배열로만들기 {
 

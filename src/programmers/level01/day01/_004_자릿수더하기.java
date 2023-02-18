@@ -1,4 +1,4 @@
-package programmers.level01.day02;
+package programmers.level01.day01;
 
 public class _004_자릿수더하기 {
 

@@ -1,4 +1,4 @@
-package programmers.level01.day02;
+package programmers.level01.day01;
 
 import java.util.Collections;
 import java.util.List;

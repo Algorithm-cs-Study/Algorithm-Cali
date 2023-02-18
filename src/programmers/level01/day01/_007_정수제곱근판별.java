@@ -1,4 +1,4 @@
-package programmers.level01.day03;
+package programmers.level01.day01;
 
 public class _007_정수제곱근판별 {
 

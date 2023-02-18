@@ -1,4 +1,4 @@
-package programmers.level01.day03;
+package programmers.level01.day01;
 
 public class _008_x만큼간격이있는n개의숫자 {
     public long[] solution(int x, int n) {
