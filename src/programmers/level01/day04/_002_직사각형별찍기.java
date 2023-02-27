@@ -1,5 +1,7 @@
 package programmers.level01.day04;
 
+import java.util.Scanner;
+
 public class _002_직사각형별찍기 {
 
     public static void main(String[] args) {
