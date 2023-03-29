@@ -3,8 +3,8 @@ package programmers.level01.day10;
 public class _002_공원산책 {
 
     public static void main(String[] args) {
+        // 리팩토링 필요
         int[] solution = new _002_공원산책().solution(new String[]{"SOO","OOO","OOO"}, new String[]{"E 2","S 2","W 1"});
-        // 2, 1
         for (int i : solution) {
             System.out.println("i = " + i);
         }
@@ -20,7 +20,7 @@ public class _002_공원산책 {
             now = getMovePoint(park, now, split);
         }
 
-        return answer;
+        return now;
     }
 
     private int[] getMovePoint(String[] park, int[] now, String[] split) {
@@ -33,8 +33,8 @@ public class _002_공원산책 {
             if (y + distance >= point.length) {
                 return now;
             }
-            for (int i = 0; i < distance; i++) {
-                if (point[i] == 'X') {
+            for (int i = 1; i <= distance; i++) {
+                if (point[y + i] == 'X') {
                     return now;
                 }
             }
@@ -44,45 +44,46 @@ public class _002_공원산책 {
         if (direction.equals("W")) {
             String line = park[x];
             char[] point = line.toCharArray();
-            if (y + distance >= point.length) {
+            if (y - distance < 0) {
                 return now;
             }
-            for (int i = 0; i < distance; i++) {
-                if (point[i] == 'X') {
+            for (int i = 1; i <= distance; i++) {
+                if (point[y - i] == 'X') {
                     return now;
                 }
             }
-            return new int[]{x, y + distance};
-        }
-
-        if (direction.equals("N")) {
-            String line = park[x];
-            char[] point = line.toCharArray();
-            if (y + distance >= point.length) {
-                return now;
-            }
-            for (int i = 0; i < distance; i++) {
-                if (point[i] == 'X') {
-                    return now;
-                }
-            }
-            return new int[]{x, y + distance};
+            return new int[]{x, y - distance};
         }
 
         if (direction.equals("S")) {
-            String line = park[x];
-            char[] point = line.toCharArray();
-            if (y + distance >= point.length) {
+            if (x + distance >= park.length) {
                 return now;
             }
-            for (int i = 0; i < distance; i++) {
-                if (point[i] == 'X') {
+            for (int i = 1; i <= distance; i++) {
+                String line = park[x + i];
+                char[] point = line.toCharArray();
+                if (point[y] == 'X') {
                     return now;
                 }
             }
-            return new int[]{x, y + distance};
+            return new int[]{x + distance, y};
         }
 
+        if (direction.equals("N")) {
+            if (x - distance < 0) {
+                return now;
+            }
+            for (int i = 1; i <= distance; i++) {
+                String line = park[x - i];
+                char[] point = line.toCharArray();
+                if (point[y] == 'X') {
+                    return now;
+                }
+            }
+            return new int[]{x - distance, y};
+        }
+
+        return now;
     }
 
     private int[] getStartPoint(String[] park) {
