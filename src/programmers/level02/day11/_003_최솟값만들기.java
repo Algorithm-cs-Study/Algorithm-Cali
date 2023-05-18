@@ -1,7 +1,6 @@
-package programmers.level01.day11;
+package programmers.level02.day11;
 
 import java.util.Arrays;
-import java.util.Collections;
 
 public class _003_최솟값만들기 {
 

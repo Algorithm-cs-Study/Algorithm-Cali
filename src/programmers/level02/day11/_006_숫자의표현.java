@@ -1,4 +1,4 @@
-package programmers.level01.day11;
+package programmers.level02.day11;
 
 public class _006_숫자의표현 {
 
