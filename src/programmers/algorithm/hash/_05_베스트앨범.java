@@ -37,7 +37,7 @@ public class _05_베스트앨범 {
 
         List<String> genreRanking = playMap.keySet().stream()
             .sorted(Comparator.comparing(playMap::get).reversed())
-            .toList();
+            .collect(Collectors.toList());
 
         for (String genre : genreRanking) {
             List<Integer> songs = songMap.get(genre).stream()
